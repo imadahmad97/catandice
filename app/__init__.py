@@ -9,8 +9,10 @@ def create_app():
     logger = logging.getLogger(__name__)
     logger.info("Flask app is being created.")
 
+    logger.info("Registering Routes")
     from .routes import register_routes
 
     register_routes(app)
+    logger.info("Routes Registered")
 
     return app
