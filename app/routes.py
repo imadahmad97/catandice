@@ -5,11 +5,7 @@ logger = logging.getLogger(__name__)
 
 
 def register_routes(app):
-    @app.route("/")
-    def index():
-        return render_template("index.html")
-
-    @app.route("/dice-selection", methods=["GET", "POST"])
+    @app.route("/", methods=["GET", "POST"])
     def dice_selection():
         logger.info("Dice selection page loading")
         if request.method == "POST":
